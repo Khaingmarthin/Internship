@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container{
+        width: 800px;
+        height: 650px;
+        margin: auto;
+        margin-top: 20px;
+      }
+
+      /* ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #333333;
+        display: flex;
+      }
+      ul li a {
+        display: block;
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      ul li a:hover {
+        background-color: #111111;
+      } */
+     .feature{
+        padding: 10px;
+        margin: 20px;
+        display: flex;
+        justify-content: space-around;
+      }
+      .feature span{
+        background-color: darkgrey;
+        padding: 10px;
+        color:white;
+        border-radius: 5px;
+        width:200px;
+        text-align: center;
+      }
+      .main{
+        display: flex;
+        gap: 50px;
+        background-color:white;
+        flex-direction: row;
+        /* width: 700px;
+        height: 400px; */
+        margin: 20px;
+        padding: 50px;
+        width:80%;
+        align-content: center;
+        margin: auto;
+        border-radius: 25px;
+      }
+      .left-box {
+        display: flex;
+        flex-direction: column;
+        line-height: 35px;
+        background-color:aliceblue;
+        width:300px; 
+        height: 300px;
+      }
+      .box {
+        background-color:aliceblue;
+        border-radius: 15px;
+        padding: 50px 40px;
+        width:300px; 
+        height: 300px;
+      }
+      .box .alex{
+        padding: 10px;
+        border: 3px solid white;
+        background-color: blue;
+        text-align: left;
+        border-radius: 10px;
+        width: 210px;
+        height: 250;
+        justify-content: center;        
+      }
+
+      button{
+        margin-top: 10px;
+        margin-left: 300px;
+        padding: 5px;
+      }
+      nav{
+        display: flex;
+        overflow: hidden;
+        margin-top: 20px;
+        background-color:rgba(40, 36, 38, 0.837);
+      }
+      nav h2{
+        display: inline;
+        width: 600px;
+        padding: 20px;
+      }
+      nav .menu{
+        display: flex;
+        padding: 20px;
+        justify-content: space-around;
+        width: 350px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>CSS Utility Simulator</h2>
+      <p>
+        Change the inputs below to see how atomic classes combine to build UIs
+      </p>
+
+      <nav>
+        <h2 class="MyLogo">MyLogo</h2>
+        <div class="menu">
+          <span>Home</span>
+          <span>About</span>
+          <span>Contact</span>
+        </div>
+      </nav>
+      <div class="feature">
+        <span>Feature1</span>
+        <span>Feature2</span>
+        <span>Feature3</span>
+      </div>
+      
+      <div class="main">
+        <section class="left-box">
+          <h3>Utility Controls</h3>
+
+          <label for="inputPadding" id="inputPadding">Padding(Spacing)</label>
+          <select>
+            <option>Medium(p-8)</option>
+          </select>
+
+          <label for="backgroundThemes" id="backgroundThemes">Background Theme(Colors)</label>
+          <select>
+            <option>Primary value</option>
+          </select>
+
+          <label for="textSize" id="textSize">Text Size(Typography)</label>
+          <select>
+            <option>Large(text-xl)</option>
+          </select>
+
+          <label for="corner" id="corner">Corner Radius(Borders)</label>
+          <select>
+            <option>Square(Rounded-none)</option>
+          </select>
+
+          <label for="shadow" id="shadow">Shadow(Depth)</label>
+          <select>
+            <option>Medium(shadow-md)</option>
+          </select>
+        </section>
+        <section class="box">
+            <div class="alex">
+                <p style="font-weight: bold;">Alex Walker</p>
+                <awesome>Full-Stack Web Developer building awesome things with Tailwind CSS</p>
+            </div>
+        </section>
+      </div>
+      <input type="buton" value="Submit" style="background-color: blue;
+       border-radius: 7px; border:none; color:white; font-size:16px; padding: 10px; margin:4px 2px; width:75px; height:35px">
+      <input type="buton" value="Hover me slowly!" style="background-color: blue;
+       border-radius: 7px; border:none; color:white; font-size:16px; padding: 10px; margin:4px 2px; width:150px; height:35px">
+    </div>
+    
+  </body>
+</html>

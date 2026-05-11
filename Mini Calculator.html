@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #b7ceec;
+      }
+      .box {
+        background-color: #fefcff;
+        padding: 20px;
+        margin: auto;
+        border-radius: 10px;
+        width: 30%;
+        margin-top: 100px;
+      }
+      .calculation {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-around;
+      }
+      .calculation input {
+        width: 115px;
+        height: 45px;
+        border-radius: 5px;
+        padding: 10px;
+        border: 1px solid #eeeeee;
+        align-content: center;
+      }
+      .operator {
+        width: 65px;
+        height: 45px;
+        border-radius: 5px;
+        border: 1px solid #eeeeee;
+        font-size: large;
+        text-align: center;
+      }
+      button {
+        background-color: blue;
+        border-radius: 5px;
+        text-align: center;
+        font-size: large;
+        margin: 20px;
+        width: 360px;
+        height: 45px;
+        border: 0px none;
+        color: white;
+      }
+      .answer {
+        background-color: aliceblue;
+        border-radius: 5px;
+        border: 3px dotted #eeeeee;
+        font-size: large;
+        margin: 20px;
+        width: 360px;
+        height: 45px;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h3 style="text-align: center">Mini Calculator</h3>
+      <div class="calculation">
+        <input type="number" id="num1" />
+        <select class="operator" id="opera">
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">*</option>
+          <option value="/">/</option>
+          <option value="%">%</option>
+        </select>
+        <input type="number" id="num2" />
+      </div>
+      <button onclick="calc()">Calculate Amount</button>
+      <input type="text" readonly id="result" value="Result:" class="answer" />
+    </div>
+    <script type="text/javascript">
+      function calc() {
+        const n1 = parseFloat(document.getElementById("num1").value);
+        const n2 = parseFloat(document.getElementById("num2").value);
+        const oper = document.getElementById("opera").value;
+        const res = document.getElementById("result");
+
+        if (isNaN(n1) || isNaN(n2)) {
+          res.value = "Please enter the numbers first!";
+        }
+        if (oper == "+") {
+          res.value = n1 + n2;
+        } else if (oper == "-") {
+          res.value = n1 - n2;
+        } else if (oper == "*") {
+          res.value = n1 * n2;
+        } else if (oper == "/") {
+          if (n2 <= 0) {
+            res.value = "Can not be diveded by 0!";
+          } else {
+            res.value = n1 / n2;
+          }
+        } else if (oper == "%") {
+          res.value = n1 % n2;
+        } else {
+          res.value = n1 + n2;
+        }
+      }
+    </script>
+  </body>
+</html>

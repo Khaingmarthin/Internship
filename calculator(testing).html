@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #b7ceec;
+      }
+      .box {
+        background-color: #fefcff;
+        padding: 20px;
+        margin: auto;
+        border-radius: 10px;
+        width: 30%;
+        margin-top: 100px;
+      }
+      .calculation {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-around;
+      }
+      .calculation input {
+        width: 115px;
+        height: 45px;
+        border-radius: 5px;
+        padding: 10px;
+        border: 1px solid #eeeeee;
+        align-content: center;
+      }
+      .operator {
+        width: 65px;
+        height: 45px;
+        border-radius: 5px;
+        border: 1px solid #eeeeee;
+        font-size: large;
+        text-align: center;
+      }
+      button {
+        background-color: blue;
+        border-radius: 5px;
+        text-align: center;
+        font-size: large;
+        margin: 20px;
+        width: 360px;
+        height: 45px;
+        border: 0px none;
+        color: white;
+      }
+      .answer {
+        background-color: aliceblue;
+        border-radius: 5px;
+        border: 3px dotted #eeeeee;
+        font-size: large;
+        margin: 20px;
+        width: 360px;
+        height: 45px;
+        color: ghostwhite;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="box">
+      <h3 style="text-align: center">Mini Calculator</h3>
+      <div class="calculation">
+        <input type="number" id="num1" />
+        <select class="operator">
+          <option><button id="add">+</button></option>
+          <option><button id="sub">-</button></option>
+          <option><button id="mul">*</button></option>
+          <option><button id="division">/</button></option>
+        </select>
+        <input type="number" id="num2" />
+      </div>
+      <button type="submit" value="Calculate" id="calculate">
+        Calculate Amount
+      </button>
+      <input
+        type="number"
+        readonly
+        id="result"
+        value="Result:"
+        class="answer"
+      />
+    </div> -->
+    <script type="text/javascript">
+      let x = null;
+      console.log(typeof x);
+
+      // var n1 = document.getElementById("num1");
+      // var n2 = document.getElementById("num2");
+      // var res = document.getElementById("result");
+
+      // document.getElementById("add").addEventListener("click", function () {
+      //   res.value = parseInt(n1.value) + parseInt(n2.value);
+      // });
+
+      // document.getElementById("sub").addEventListener("click", function () {
+      //   res.value = parseInt(n1.value) - parseInt(n2.value);
+      // });
+
+      // document.getElementById("mul").addEventListener("click", function () {
+      //   res.value = parseInt(n1.value) * parseInt(n2.value);
+      // });
+
+      // document
+      //   .getElementById("division")
+      //   .addEventListener("click", function () {
+      //     res.value = parseInt(n1.value) / parseInt(n2.value);
+      //   });
+    </script>
+  </body>
+</html>
