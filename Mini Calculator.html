@@ -91,6 +91,7 @@
 
         if (isNaN(n1) || isNaN(n2)) {
           res.value = "Please enter the numbers first!";
+          return;
         }
         if (oper == "+") {
           res.value = n1 + n2;
