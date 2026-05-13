@@ -24,7 +24,6 @@
       margin-top: 50px;
     }
     .calculator {
-
       margin: auto;
       display: flex;
       flex-direction: column;
@@ -49,6 +48,10 @@
       overflow-x: auto;
       white-space: nowrap;
     }
+    .display:focus {
+      outline: none;
+    }
+
     .calculator .keys {
       width: 100%;
       display: grid;
@@ -82,7 +85,7 @@
   </style>
   <body>
     <div class="calculator">
-      <div class="display"></div>
+      <div class="display" contenteditable="true"></div>
       <div class="keys">
         <button class="actions_btns" onclick="clearDisplay()">C</button>
         <button class="actions_btns" onclick="deleteLast()">
@@ -120,7 +123,7 @@
           <i class="fa-solid fa-plus"></i>
         </button>
 
-        <button onclick="appendToDisplay('()')">()</button>
+        <button onclick="appendBracket()">()</button>
         <button onclick="appendToDisplay('0')">0</button>
         <button onclick="appendToDisplay('.')">.</button>
         <button
@@ -137,11 +140,11 @@
 
       function appendToDisplay(inputValue) {
         const operators = ["+", "-", "*", "/", "%"];
-        const lastChar = display.textContent.slice(-1git);
+        const lastChar = display.textContent.slice(-1);
 
         // Check duplicate operators
         if (operators.includes(inputValue) && operators.includes(lastChar)) {
-          display.textContent = "Error";
+          // display.textContent = "Error";
           return;
         }
 
@@ -156,7 +159,7 @@
         try {
           // If display is empty
           if (display.textContent.trim() === "") {
-            display.textContent = "0";
+            display.textContent = "";
             return;
           }
 
@@ -165,7 +168,7 @@
           const lastChar = display.textContent.slice(-1);
 
           if (operators.includes(lastChar)) {
-            display.textContent = "Error";
+            display.textContent = "";
             return;
           }
 
@@ -173,12 +176,29 @@
         } catch (error) {
           display.textContent = "Error";
         }
+
+        let formattedValue = display.replace(/\)(\d)/g, ')*$1') //)
       }
       function clearDisplay() {
         display.textContent = "";
       }
       function deleteLast() {
         display.textContent = display.textContent.slice(0, -1);
+      }
+      function appendBracket() {
+        const text = display.textContent;
+        const openBrackets = (text.match(/\(/g) || []).length;
+        const closeBrackets = (text.match(/\)/g) || []).length;
+        if (openBrackets === closeBrackets || text.slice(-1) === "(") {
+          display.textContent += "(";
+        } else if (
+          openBrackets > closeBrackets &&
+          !["+", "-", "*", "/", "%", "("].includes(text.slice(-1))
+        ) {
+          display.textContent += ")";
+        } else {
+          display.textContent += ")";
+        }
       }
     </script>
   </body>
